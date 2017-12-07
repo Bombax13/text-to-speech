@@ -26,6 +26,13 @@
       </div>
     </header>
     <h1 class="mdc-typography--display1">TTS App!</h1>
+    <textarea>
+      
+    </textarea>
+    
+    <button id ="sayText">
+      speak
+    </button>
     <button type="button" class="mdc-button mdc-button--raised">
       Greetings
     </button>
@@ -126,8 +133,12 @@ And then we'll take it higher, Electric Avenue
             
         // hook up event handler on the buttons
         
-         $("button").on("click", function() {
+         $("button").not("#sayText").on("click", function() {
            sayIt($(this).text());
+         });
+      
+      $("#sayText").on("click", function() {
+           sayIt($("textarea").val());
          });
         
 
